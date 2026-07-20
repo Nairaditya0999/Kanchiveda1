@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanchiveda | Exquisite Silk Sarees</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for premium icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo-container">
+            <!-- RECOMMENDED: Save your images to an 'images' project folder so they display properly on all devices -->
+            
+            <img src="C:\Users\Karthik\Downloads\log-jukebox-bg-removed 11.jpg" alt="Kanchiveda Text" class="brand-logo-img">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="#collections" class="dropbtn">Collections <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#collections" onclick="filterCategory('semi-silk')">Semi Silk</a>
+                        <a href="#collections" onclick="filterCategory('pure-silk')">Pure Silk</a>
+                    </div>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section id="home" class="hero">
+      
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <a href="#collections" class="btn" onclick="filterCategory('all')">Explore Collections</a>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="collections-section">
+        <h2>Our Collections</h2>
+        <p class="section-subtitle">Exquisite designs crafted for your special moments</p>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" id="btn-all" onclick="filterCategory('all')">All </button>
+            <button class="filter-btn" id="btn-pure" onclick="filterCategory('pure-silk')">Pure Silk</button>
+            <button class="filter-btn" id="btn-semi" onclick="filterCategory('semi-silk')">Semi Silk </button>
+        </div>
+
+        <div class="products-grid" id="saree-container">
+            <!-- JavaScript dynamically renders items here -->
+        </div>
+    </section>
+
+    <!-- Lightbox Modal Screen -->
+    <div id="image-modal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-about">
+               
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> kanchivedapvtltd@gmail.com</p>
+                <p><i class="fas fa-phone"></i> 9004714311</p>
+                <p><i class="fas fa-map-marker-alt"></i> New panvel Navimumbai Maharashtra</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kanchiveda. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

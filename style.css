@@ -1,0 +1,711 @@
+/* ==========================================================================
+   1. CORE VARIABLES & MASTER LAYOUT DEFAULTS
+   ========================================================================== */
+:root {
+    --primary-color: #58181F;    /* Rich Silk Maroon */
+    --primary-light: #72232B;    /* Lighter Maroon for soft gradients/hovers */
+    --accent-color: #D4AF37;     /* Zari Gold Accent */
+    --accent-glow: #F3E5AB;      /* Soft Vanilla/Champagne Gold */
+    --dark-color: #2A1E1F;       /* Deep Charcoal with a warm maroon undertone */
+    --light-bg: #FCF9F6;         /* Raw Off-White/Ivory Silk background */
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Ultra-smooth ease-out */
+    --card-shadow: 0 4px 20px rgba(88, 24, 31, 0.04);
+    --hover-shadow: 0 20px 35px rgba(88, 24, 31, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--light-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark-color);
+    background-image: radial-gradient(var(--accent-glow) 0.5px, transparent 0.5px), radial-gradient(var(--accent-glow) 0.5px, var(--light-bg) 0.5px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. HEADER NAVIGATION & BRAND ARCHITECTURE (COMPACT NAVBAR)
+   ========================================================================== */
+header {
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 4%; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(88, 24, 31, 0.08);
+    border-bottom: 2px solid var(--accent-color); 
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;      
+    justify-content: flex-start; 
+    gap: 12px;                
+    background: transparent;
+    height: 42px; 
+}
+
+.brand-logo-symbol, .brand-logo-img {
+    height: 36px; 
+    width: auto;              
+    display: block;
+    object-fit: contain;
+    mix-blend-mode: multiply; 
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    transition: var(--transition);
+    font-size: 0.95rem; 
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 4px 0;
+}
+
+/* Traditional Star Motif Underline Effect */
+nav a::after {
+    content: '✦'; 
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    font-size: 8px;
+    color: var(--accent-color);
+    opacity: 0;
+    transition: var(--transition);
+    transform: translateX(-50%) scale(0);
+}
+
+nav a:hover::after, nav a.active::after {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.2);
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary-color);
+}
+
+/* Dropdown Menu Overlays */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: 0px 10px 30px rgba(88, 24, 31, 0.12);
+    z-index: 1;
+    border-radius: 4px;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 3px solid var(--primary-color);
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--dark-color);
+    padding: 10px 16px;
+    display: block;
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(88, 24, 31, 0.05);
+}
+
+.dropdown-content a::after {
+    display: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    padding-left: 20px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ==========================================================================
+   3. HERO DISPLAY ELEMENTS (VISIBLE BG & CENTERED, SMALLER & SIMPLER EXPLORE BUTTON)
+   ========================================================================== */
+.hero {
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px 15px 20px; 
+    border-bottom: 4px solid var(--accent-color);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(rgba(20, 5, 7, 0.12), rgba(20, 5, 7, 0.28)), 
+                url("C:/Users/Karthik/Downloads/kv1.jpg") no-repeat center center/cover;
+}
+
+.hero-content {
+    z-index: 2;
+    width: 100%;
+    margin-bottom: 0px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    color: var(--accent-glow);
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.85);
+}
+
+.btn {
+    background-color: transparent; /* Simple minimalist design */
+    color: var(--white);
+    padding: 10px 24px; /* Reduced button size */
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem; /* Smaller text size */
+    display: inline-block;
+    box-shadow: none; /* Removed heavy shadow for a clean look */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Simple subtle border */
+    margin-top: 30px; 
+    margin-bottom: 90px; /* Kept lowered design position */
+    position: relative;
+    z-index: 2;
+    align-self: center; 
+}
+
+.btn:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border-color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero::after {
+    content: '\f107';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    bottom: 4px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    animation: floatArrow 2s infinite ease-in-out;
+    z-index: 2;
+}
+
+@keyframes floatArrow {
+    0%, 100% { transform: translate(-50%, 0); opacity: 0.6; }
+    50% { transform: translate(-50%, -6px); opacity: 1; }
+}
+
+/* ==========================================================================
+   4. COLLECTIONS SECTION & FULL-SCREEN LAYOUT
+   ========================================================================== */
+.collections-section {
+    padding: 80px 2%; 
+    text-align: center;
+    width: 100%;      
+    max-width: 100%;  
+    margin: 0 auto;
+}
+
+.collections-section h2 {
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.collections-section h2::after {
+    content: "❖   ✦   ❖";
+    display: block;
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    letter-spacing: 8px;
+    margin: 10px auto 0 auto;
+    font-family: serif;
+}
+
+.section-subtitle {
+    color: #666;
+    margin-bottom: 40px;
+    font-style: italic;
+    font-size: 1.25rem; 
+    margin-top: 10px;
+}
+
+.filter-buttons {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: var(--white);
+    border: 1px solid rgba(88, 24, 31, 0.2);
+    color: var(--primary-color);
+    padding: 12px 32px; 
+    font-size: 1rem;     
+    cursor: pointer;
+    border-radius: 30px;
+    transition: var(--transition);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(88, 24, 31, 0.15);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    width: 100%;
+}
+
+/* ==========================================================================
+   5. PRODUCT CARD ARCHITECTURE & LARGER FONTS
+   ========================================================================== */
+.product-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid rgba(88, 24, 31, 0.04);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--hover-shadow);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.product-img-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 3 / 4; 
+    background-color: #f7f5f2; 
+}
+
+.slider-track {
+    display: flex;
+    width: 300%; 
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slider-track img {
+    width: 33.3333%; 
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .slider-track img {
+    transform: scale(1.03); 
+}
+
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-color);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    z-index: 5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    opacity: 0;
+}
+
+.product-card:hover .slide-arrow {
+    opacity: 1;
+}
+
+.slide-arrow:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.prev-arrow { left: 10px; }
+.next-arrow { right: 10px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 5;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background: var(--accent-color);
+    width: 16px;
+    border-radius: 10px;
+}
+
+.tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: var(--white);
+    padding: 6px 14px;
+    font-size: 0.8rem; 
+    font-weight: 600;
+    border-radius: 4px; 
+    z-index: 6;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.product-info {
+    padding: 22px; 
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: left;
+    background: var(--white);
+}
+
+.product-info h3 {
+    font-size: 1.35rem; 
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.description {
+    font-size: 1rem; 
+    color: #555;
+    margin-bottom: 18px;
+    line-height: 1.5;
+    flex-grow: 1;
+    font-family: 'Georgia', serif;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.price {
+    font-size: 1.45rem; 
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 16px;
+    border-top: 1px dashed rgba(88, 24, 31, 0.12);
+    padding-top: 14px;
+}
+
+.enquire-btn {
+    background-color: #25D366; 
+    color: var(--white);
+    border: none;
+    padding: 14px; 
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.95rem; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.enquire-btn:hover {
+    background-color: #128C7E;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   6. LIGHTBOX OVERLAY VIEW
+   ========================================================================== */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(20, 7, 9, 0.98);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    box-shadow: 0px 20px 60px rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--accent-color);
+    animation: zoomIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    color: var(--accent-color);
+    font-size: 50px;
+    font-weight: 200;
+    cursor: pointer;
+    user-select: none;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    transform: scale(1.1) rotate(90deg);
+    color: var(--white);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================================================================
+   7. FOOTER ELEMENTS (CONTACT US RIGHT-ALIGNED, SMALLER TEXT, LEFT-ALIGNED ICONS)
+   ========================================================================== */
+footer {
+    background: linear-gradient(135deg, #3A0F14, var(--primary-color));
+    color: var(--white);
+    padding: 80px 8% 30px 8%;
+    border-top: 4px solid var(--accent-color);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-about {
+    flex: 1;
+    min-width: 280px;
+    text-align: left;
+}
+
+.footer-contact {
+    flex: 1;
+    min-width: 280px;
+    text-align: right; 
+}
+
+.footer-about h3, .footer-contact h3 {
+    font-size: 1.8rem; 
+    color: var(--accent-color);
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-about p {
+    line-height: 1.8;
+    font-size: 1.1rem; 
+    color: #ECE0E1;
+    font-family: 'Georgia', serif;
+}
+
+.footer-contact p {
+    line-height: 1.6;
+    font-size: 0.95rem; 
+    color: #ECE0E1;
+    font-family: 'Georgia', serif;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    flex-direction: row; 
+}
+
+.footer-contact p i {
+    margin-right: 12px; 
+    margin-left: 0;
+    color: var(--accent-color);
+    font-size: 1.1rem; 
+    width: 20px;
+    text-align: center;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(214, 175, 55, 0.15);
+    padding-top: 30px;
+    text-align: center;
+    font-size: 0.95rem; 
+    color: rgba(236, 224, 225, 0.7);
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES & RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    header { padding: 10px 4%; }
+    .logo-container { height: 40px; }
+    .brand-logo-symbol, .brand-logo-img { height: 34px; }
+    .hero-content h1 { font-size: 3rem; }
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    header { padding: 8px 4%; }
+    .logo-container { height: 36px; }
+    .brand-logo-symbol, .brand-logo-img { height: 30px; }
+    
+    nav ul { gap: 15px; }
+    nav a { font-size: 0.88rem; letter-spacing: 0.8px; }
+    
+    .hero { padding-bottom: 20px; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .hero-content p { font-size: 1rem; margin-bottom: 6px; }
+    .btn { padding: 9px 20px; font-size: 0.75rem; margin-top: 20px; margin-bottom: 60px; }
+    
+    .collections-section { padding: 60px 2%; }
+    .collections-section h2 { font-size: 2.4rem; }
+    
+    .products-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 16px; 
+    }
+    
+    .product-info { padding: 15px; }
+    .product-info h3 { font-size: 1.15rem; }
+    .description { font-size: 0.92rem; }
+    .price { font-size: 1.25rem; margin-bottom: 12px; }
+    .enquire-btn { padding: 12px; font-size: 0.85rem; }
+    
+    .footer-about h3, .footer-contact h3 { font-size: 1.5rem; }
+    .footer-about p, .footer-contact p { font-size: 0.95rem; }
+    .footer-contact { text-align: left; } 
+    .footer-contact p { justify-content: flex-start; }
+    
+    .close-modal {
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+    }
+}

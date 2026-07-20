@@ -12,7 +12,7 @@ const sareeDatabase = [
         title: "Elegant Grey Pure Silk Saree with Rich Maroon Zari Border",
         description: "#0001",
         price: "Price on Request",
-        images: ["images/grey 1.jpg", "images/grey2.jpg", "images/grey3.jpg"]
+        images: ["images/grey 1.webp", "images/grey2.webp", "images/grey3.webp"]
     },
     {
         id: "pure-2",
@@ -21,7 +21,7 @@ const sareeDatabase = [
         title: "Royal Magenta Pure Silk Saree with Traditional Gold Zari Border",
         description: "#0002", 
         price: "Price on Request",
-        images: ["images/cf1.jpg", "images/cf2.jpg", "images/cf3.jpg"]
+        images: ["images/cf1.webp", "images/cf2.webp", "images/cf3.webp"]
     },
     {
         id: "pure-3",
@@ -30,7 +30,7 @@ const sareeDatabase = [
         title: "Royal Purple Pure Silk Saree with Elegant Gold Zari Border",
         description: "#0003",
         price: "Price on Request",
-        images: ["images/bb1.jpg", "images/bb2.jpg", "images/bb3.jpg"]
+        images: ["images/bb1.webp", "images/bb2.webp", "images/bb3.webp"]
     },
     {
         id: "pure-4",
@@ -39,7 +39,7 @@ const sareeDatabase = [
         title: "Olive Green Pure Silk Saree with Classic Zari Border",
         description: "#0004",
         price: "Price on Request",
-        images: ["images/gg1.jpg", "images/gg2.jpg", "images/gg3.jpg"]
+        images: ["images/gg1.webp", "images/gg2.webp", "images/gg3.webp"]
     },
     {
         id: "pure-5",
@@ -48,7 +48,7 @@ const sareeDatabase = [
         title: "Royal Violet Pure Silk Saree with Gold Zari Border",
         description: "#0005",
         price: "Price on Request",
-        images: ["images/vv1.jpg","images/vv2.jpg" ,"images/vv3.jpg"]
+        images: ["images/vv1.webp","images/vv2.webp" ,"images/vv3.webp"]
     },
     {
         id: "pure-6",
@@ -57,7 +57,7 @@ const sareeDatabase = [
         title: "Teal Blue Pure Silk Saree with Royal Blue Zari Border",
         description: "#0006",
         price: "Price on Request",
-        images: ["images/b1.jpg", "images/b2.jpg", "images/b3.jpg"]
+        images: ["images/b1.webp", "images/b2.webp", "images/b3.webp"]
     },
     {
         id: "pure-7",
@@ -66,7 +66,7 @@ const sareeDatabase = [
         title: "Royal Blue Silk Saree with Zari Buttas and a Contrasting Magenta Zari Border",
         description: "#0007",
         price: "Price on Request",
-        images: ["images/PS1.jpg", "images/PS2.jpg", "images/ps3.jpg"]
+        images: ["images/PS1.webp", "images/PS2.webp", "images/ps3.webp"]
     },
     {
         id: "pure-8",
@@ -75,7 +75,7 @@ const sareeDatabase = [
         title: "Vibrant Purple Silk Saree with Elegant Zari Leaf Buttas and a Contrasting Blue Zari Border",
         description: "#0008",
         price: "Price on Request",
-        images: ["images/p1.jpg", "images/p1.jpg", "images/p3.jpg"]
+        images: ["images/p1.webp", "images/p1.webp", "images/p3.webp"]
     },
     {
         id: "pure-9",
@@ -84,7 +84,7 @@ const sareeDatabase = [
         title: "Elegant Beige Silk Saree with Delicate Zari Buttas and a Contrasting Black Zari Border",
         description: "#0009",
         price: "Price on Request",
-        images: ["images/w1.jpg", "images/w2.jpg", "images/w3.jpg"]
+        images: ["images/w1.webp", "images/w2.webp", "images/w3.webp"]
     },
     {
         id: "pure-10",
@@ -93,7 +93,7 @@ const sareeDatabase = [
         title: "Bright Electric Blue Silk Saree with Elegant Zari Leaf Buttas and a Navy Blue Zari Border",
         description: "#0010",
         price: "Price on Request",
-        images: ["images/bl1.jpg", "images/bl2.jpg", "images/bl3.jpg"]
+        images: ["images/bl1.webp", "images/bl2.webp", "images/bl3.webp"]
     },
     {
         id: "pure-11",
@@ -102,7 +102,7 @@ const sareeDatabase = [
         title: "Olive Green Pure Silk Saree with a Contrasting Purple Temple Zari Border",
         description: "#0011",
         price: "Price on Request",
-        images: ["images/pss2.jpg", "images/pss3.jpg", "images/pss1.jpg"]
+        images: ["images/pss2.webp", "images/pss3.webp", "images/pss1.webp"]
     },
     {
         id: "pure-12",
@@ -111,7 +111,7 @@ const sareeDatabase = [
         title: "Dark Bottle Green Silk Saree with 3 layer border",
         description: "#0012",
         price: "Price on Request",
-        images: ["images/bbb1.jpg", "images/bbb2.jpg", "images/bbb3.jpg"]
+        images: ["images/bbb1.webp", "images/bbb2.webp", "images/bbb3.webp"]
     },
     {
         id: "pure-13",
@@ -120,7 +120,7 @@ const sareeDatabase = [
         title: "Deep Magenta Silk Saree with a Multi-Colored Orange and Pink Zari Border",
         description: "#0013",
         price: "Price on Request",
-        images: ["images/d1.jpg", "images/d2.jpg", "images/d3.jpg"]
+        images: ["images/d1.webp", "images/d2.webp", "images/d3.webp"]
     },
     {
         id: "pure-14",
@@ -129,7 +129,7 @@ const sareeDatabase = [
         title: "Deep Teal Blue Silk Saree with a Multi-Colored Lime Green and Purple Zari Border",
         description: "#0014",
         price: "Price on Request",
-        images: ["images/e1.jpg", "images/e2.jpg", "images/e3.jpg"]
+        images: ["images/e1.webp", "images/e2.webp", "images/e3.webp"]
     },
     {
         id: "pure-15",
@@ -138,7 +138,7 @@ const sareeDatabase = [
         title: "Maroon Pure Silk Saree with Fine Checks and a Contrasting Mustard-Orange Border",
         description: "#0015",
         price: "Price on Request",
-        images: ["images/f1.jpg", "images/f2.jpg", "images/f3.jpg"]
+        images: ["images/f1.webp", "images/f2.webp", "images/f3.webp"]
     },
     {
         id: "pure-16",
@@ -147,7 +147,7 @@ const sareeDatabase = [
         title: "Deep Pinkish-Red Pure Silk Saree with a Wide Gold Zari and Dark Green Border",
         description: "#0016",
         price: "Price on Request",
-        images: ["images/g1.jpg", "images/g2.jpg", "images/g3.jpg"]
+        images: ["images/g1.webp", "images/g2.webp", "images/g3.webp"]
     },
     {
         id: "pure-17",
@@ -156,7 +156,7 @@ const sareeDatabase = [
         title: "Deep Plum Pure Silk Saree with a Wide Orange Zari Border",
         description: "#0017",
         price: "Price on Request",
-        images: ["images/h1.jpg", "images/h2.jpg", "images/h3.jpg"]
+        images: ["images/h1.webp", "images/h2.webp", "images/h3.webp"]
     },
     {
         id: "pure-18",
@@ -165,7 +165,7 @@ const sareeDatabase = [
         title: "Deep Wine Silk Saree with Elegant Zari Buttas and a Contrasting Purple Zari Border",
         description: "#0018",
         price: "Price on Request",
-        images: ["images/PS4.jpg", "images/PS5.jpg", "images/PS6.jpg"]
+        images: ["images/PS4.webp", "images/PS5.webp", "images/PS6.webp"]
     },
     {
         id: "pure-19",
@@ -174,7 +174,7 @@ const sareeDatabase = [
         title: "Rose Pink Silk Saree with Intricate Zari Buttas and a Contrasting Dark Wine Zari Border",
         description: "#0019",
         price: "Price on Request",
-        images: ["images/j1.jpg", "images/j2.jpg", "images/j3.jpg"]
+        images: ["images/j1.webp", "images/j2.webp", "images/j3.webp"]
     },
     {
         id: "pure-20",
@@ -183,7 +183,7 @@ const sareeDatabase = [
         title: "Orange Pure Silk Saree with Subtle Zari Buttas and a Contrasting Red Zari Border",
         description: "#0020",
         price: "Price on Request",
-        images: ["images/k1.jpg", "images/k2.jpg", "images/k3.jpg"]
+        images: ["images/k1.webp", "images/k2.webp", "images/k3.webp"]
     },
     {
         id: "pure-21",
@@ -192,7 +192,7 @@ const sareeDatabase = [
         title: "Lemon Green Silk Saree with a Contrasting Peach Zari Border",
         description: "#0021",
         price: "Price on Request",
-        images: ["images/l1.jpg", "images/l2.jpg", "images/l3.jpg"]
+        images: ["images/l1.webp", "images/l2.webp", "images/l3.webp"]
     },
     {
         id: "pure-22",
@@ -201,7 +201,7 @@ const sareeDatabase = [
         title: "Pastel Sage Green Silk Saree with Elegant Zari Buttas and a Contrasting Purple Zari Border",
         description: "#0022",
         price: "Price on Request",
-        images: ["images/m1.jpg", "images/m2.jpg", "images/PS7.jpg"]
+        images: ["images/m1.webp", "images/m2.webp", "images/PS7.webp"]
     },
     {
         id: "pure-23",
@@ -210,7 +210,7 @@ const sareeDatabase = [
         title: "Off-White Silk Saree with Elegant Zari Buttas and a Contrasting Grey Striped Temple Zari Border",
         description: "#0023",
         price: "Price on Request",
-        images: ["images/n1.jpg", "images/n2.jpg", "images/n3.jpg"]
+        images: ["images/n1.webp", "images/n2.webp", "images/n3.webp"]
     },
     {
         id: "pure-24",
@@ -219,7 +219,7 @@ const sareeDatabase = [
         title: "Bright Yellow Silk Saree with Elegant Zari Buttas and a Contrasting Green Zari Border",
         description: "#0024",
         price: "Price on Request",
-        images: ["images/o1.jpg", "images/o2.jpg", "images/o3.jpg"]
+        images: ["images/o1.webp", "images/o2.webp", "images/o3.webp"]
     },
 
     // ==========================================================================
@@ -232,7 +232,7 @@ const sareeDatabase = [
         title: "Teal Blue Semi Silk Saree with Elegant Zari Buttas and a Contrasting Maroon Zari Border",
         description: "#0025",
         price: "Price on Request",
-        images: ["images/sm1.jpg", "images/sm2.jpg", "images/sm3.jpg"]
+        images: ["images/sm1.webp", "images/sm2.webp", "images/sm3.webp"]
     },
     {
         id: "semi-2",
@@ -241,7 +241,7 @@ const sareeDatabase = [
         title: "Maroon Semi Silk Saree with Elegant Zari Buttas and a Contrasting Dark Green Zari Border",
         description: "#0026",
         price: "Price on Request",
-        images: ["images/sn1.jpg", "images/sn2.jpg", "images/sn3.jpg"]
+        images: ["images/sn1.webp", "images/sn2.webp", "images/sn3.webp"]
     },
     {
         id: "semi-3",
@@ -250,7 +250,7 @@ const sareeDatabase = [
         title: "Royal Blue Semi Silk Saree with Elegant Zari Buttas and a Contrasting Maroon Zari Border",
         description: "#0027",
         price: "Price on Request",
-        images: ["images/so1.jpg", "images/so2.jpg", "images/so3.jpg"]
+        images: ["images/so1.webp", "images/so2.webp", "images/so3.webp"]
     },
     {
         id: "semi-4",
@@ -259,7 +259,7 @@ const sareeDatabase = [
         title: "Dark Green Semi Silk Saree with Fine Checks and a Contrasting Maroon Zari Border",
         description: "#0028",
         price: "Price on Request",
-        images: ["images/sp1.jpg", "images/sp2.jpg", "images/sp3.jpg"]
+        images: ["images/sp1.webp", "images/sp2.webp", "images/sp3.webp"]
     },
     {
         id: "semi-5",
@@ -268,7 +268,7 @@ const sareeDatabase = [
         title: "Rust Orange Semi Silk Saree with Elegant Zari Buttas and a Contrasting Green Zari Border",
         description: "#0029",
         price: "Price on Request",
-        images: ["images/se1.jpg", "images/se2.jpg", "images/se3.jpg"]
+        images: ["images/se1.webp", "images/se2.webp", "images/se3.webp"]
     },
     {
         id: "semi-6",
@@ -277,7 +277,7 @@ const sareeDatabase = [
         title: "Rose Pink Semi Silk Saree with Elegant Zari Buttas and a Matching Zari Border",
         description: "#0030",
         price: "Price on Request",
-        images: ["images/sf1.jpg", "images/sf2.jpg", "images/sf3.jpg"]
+        images: ["images/sf1.webp", "images/sf2.webp", "images/sf3.webp"]
     },
     {
         id: "semi-7",
@@ -286,7 +286,7 @@ const sareeDatabase = [
         title: "Deep Brown Semi Silk Saree with Elegant Zari Buttas and a Contrasting Teal Green Zari Border",
         description: "#0031",
         price: "Price on Request",
-        images: ["images/sg1.jpg", "images/sg2.jpg", "images/sg3.jpg"]
+        images: ["images/sg1.webp", "images/sg2.webp", "images/sg3.webp"]
     },
     {
         id: "semi-8",
@@ -295,7 +295,7 @@ const sareeDatabase = [
         title: "Royal Blue Semi Silk Saree with Fine Checks and a Contrasting Dark Blue Zari Border",
         description: "#0032",
         price: "Price on Request",
-        images: ["images/sh1.jpg", "images/sh2.jpg", "images/sh3.jpg"]
+        images: ["images/sh1.webp", "images/sh2.webp", "images/sh3.webp"]
     },
     {
         id: "semi-9",
@@ -304,7 +304,7 @@ const sareeDatabase = [
         title: "Rust Orange Semi Silk Saree with Elegant Zari Buttas and a Contrasting Dark brown Zari Border",
         description: "#0033",
         price: "Price on Request",
-        images: ["images/si1.jpg", "images/si2.jpg", "images/si3.jpg"]
+        images: ["images/si1.webp", "images/si2.webp", "images/si3.webp"]
     },
     {
         id: "semi-10",
@@ -313,7 +313,7 @@ const sareeDatabase = [
         title: "Dark Green Semi Silk Saree with Elegant Zari Buttas and a Contrasting Pink Zari Border",
         description: "#0034",
         price: "Price on Request",
-        images: ["images/sj1.jpg", "images/sj2.jpg", "images/sj3.jpg"]
+        images: ["images/sj1.webp", "images/sj2.webp", "images/sj3.webp"]
     },
     {
         id: "semi-11",
@@ -322,7 +322,7 @@ const sareeDatabase = [
         title: "Pastel Greenish-Blue Semi Silk Saree with Full Zari Brocade Body and a Contrasting Maroon Zari Border",
         description: "#0035",
         price: "Price on Request",
-        images: ["images/sk1.jpg", "images/sk2.jpg", "images/sk3.jpg"]
+        images: ["images/sk1.webp", "images/sk2.webp", "images/sk3.webp"]
     },
     {
         id: "semi-12",
@@ -331,7 +331,7 @@ const sareeDatabase = [
         title: "Onion Pink Semi Silk Saree with Elegant Zari Buttas and a Contrasting Dark Green Zari Border",
         description: "#0036",
         price: "Price on Request",
-        images: ["images/sl1.jpg", "images/sl2.jpg", "images/sl3.jpg"]
+        images: ["images/sl1.webp", "images/sl2.webp", "images/sl3.webp"]
     },
     {
         id: "semi-13",
@@ -340,7 +340,7 @@ const sareeDatabase = [
         title: "Deep Purple Semi Silk Saree with Elegant Zari Buttas and a Broad Golden Zari Border",
         description: "#0037",
         price: "Price on Request",
-        images: ["images/sa1.jpg", "images/sa2.jpg", "images/sa3.jpg"]
+        images: ["images/sa1.webp", "images/sa2.webp", "images/sa3.webp"]
     },
     {
         id: "semi-14",
@@ -349,7 +349,7 @@ const sareeDatabase = [
         title: "Lavender Grey Semi Silk Saree with Elegant Zari Buttas and a Contrasting Magenta Zari Border",
         description: "#0038",
         price: "Price on Request",
-        images: ["images/sb1.jpg", "images/sb2.jpg", "images/sb3.jpg"]
+        images: ["images/sb1.webp", "images/sb2.webp", "images/sb3.webp"]
     },
     {
         id: "semi-15",
@@ -358,7 +358,7 @@ const sareeDatabase = [
         title: "Royal Blue Semi Silk Saree with Full Zari Brocade Body and a Contrasting Maroon Zari Border",
         description: "#0039",
         price: "Price on Request",
-        images: ["images/sc1.jpg", "images/sc2.jpg", "images/sc3.jpg"]
+        images: ["images/sc1.webp", "images/sc2.webp", "images/sc3.webp"]
     },
     {
         id: "semi-16",
@@ -367,7 +367,7 @@ const sareeDatabase = [
         title: "Rose Pink Semi Silk Saree with Full Zari Brocade Body and a Contrasting Teal Blue Zari Border",
         description: "#0040",
         price: "Price on Request",
-        images: ["images/sd1.jpg", "images/sd2.jpg", "images/sd3.jpg"]
+        images: ["images/sd1.webp", "images/sd2.webp", "images/sd3.webp"]
     },
     {
         id: "semi-17",
@@ -376,7 +376,7 @@ const sareeDatabase = [
         title: "Sky Blue Semi Silk Saree with Elegant Zari Buttas and a Matching Zari Border",
         description: "#0041",
         price: "Price on Request",
-        images: ["images/sq1.jpg", "images/sq2.jpg", "images/sq3.jpg"]
+        images: ["images/sq1.webp", "images/sq2.webp", "images/sq3.webp"]
     },
     {
         id: "semi-18",
@@ -385,7 +385,7 @@ const sareeDatabase = [
         title: "Light Olive Green Semi Silk Saree with Elegant Zari Buttas and a Contrasting Pink Zari Border",
         description: "#0042",
         price: "Price on Request",
-        images: ["images/sr1.jpg", "images/sr2.jpg", "images/sr3.jpg"]
+        images: ["images/sr1.webp", "images/sr2.webp", "images/sr3.webp"]
     },
     {
         id: "semi-19",
@@ -394,7 +394,7 @@ const sareeDatabase = [
         title: "Midnight Purple Semi Silk Saree with Elegant Zari Buttas and a Golden Zari Border",
         description: "#0043",
         price: "Price on Request",
-        images: ["images/ss1.jpg", "images/ss2.jpg", "images/ss3.jpg"]
+        images: ["images/ss1.webp", "images/ss2.webp", "images/ss3.webp"]
     },
     {
         id: "semi-20",
@@ -403,7 +403,7 @@ const sareeDatabase = [
         title: "Mustard Yellow Semi Silk Saree with Elegant Zari Buttas and a Contrasting Pink Zari Border",
         description: "#0044",
         price: "Price on Request",
-        images: ["images/saa1.jpg", "images/saa2.jpg", "images/saa3.jpg"]
+        images: ["images/saa1.webp", "images/saa2.webp", "images/saa3.webp"]
     },
     {
         id: "semi-21",
@@ -412,7 +412,7 @@ const sareeDatabase = [
         title: "Bright Orange Semi Silk Saree with Elegant Zari Buttas and a Broad Golden Zari Border with Mint Green Piping",
         description: "#0045",
         price: "Price on Request",
-        images: ["images/sz1.jpg", "images/sz2.jpg", "images/sz3.jpg"]
+        images: ["images/sz1.webp", "images/sz2.webp", "images/sz3.webp"]
     },
     {
         id: "semi-22",
@@ -421,7 +421,7 @@ const sareeDatabase = [
         title: "Hot Pink Semi Silk Saree with a Gold Star Pattern and Large Floral Blocks.",
         description: "#0046",
         price: "Price on Request",
-        images: ["images/ssa.jpg", "images/ssb.jpg", "images/ssc.jpg"]
+        images: ["images/ssa.webp", "images/ssb.webp", "images/ssc.webp"]
     },
     {
         id: "semi-23",
@@ -430,7 +430,7 @@ const sareeDatabase = [
         title: "Mehendi Green Semi Silk Saree with a Large Tree-of-Life Motif and a Contrasting Maroon Zari Border.",
         description: "#0047",
         price: "Price on Request",
-        images: ["images/sx1.jpg", "images/sx2.jpg", "images/sx3.jpg"]
+        images: ["images/sx1.webp", "images/sx2.webp", "images/sx3.webp"]
     },
     {
         id: "semi-24",
@@ -439,7 +439,7 @@ const sareeDatabase = [
         title: "Sky Blue Semi Silk Saree with Geometric Prints and a Matching Floral Zari Border.",
         description: "#0048",
         price: "Price on Request",
-        images: ["images/sy1.jpg", "images/sy2.jpg", "images/sy3.jpg"]
+        images: ["images/sy1.webp", "images/sy2.webp", "images/sy3.webp"]
     },
     {
         id: "semi-25",
@@ -448,7 +448,7 @@ const sareeDatabase = [
         title: "Copper Brown Silk Blend Saree with Self-Textured Geometric Patterns and Matching Tassels.",
         description: "#0049",
         price: "Price on Request",
-        images: ["images/ssd.jpg", "images/sse.jpg", "images/ssf.jpg"]
+        images: ["images/ssd.webp", "images/sse.webp", "images/ssf.webp"]
     },
     {
         id: "semi-26",
@@ -457,7 +457,7 @@ const sareeDatabase = [
         title: "Peach Silk Blend Saree with Small Gold Zari Squares and a Self-Design Temple Border.",
         description: "#0050",
         price: "Price on Request",
-        images: ["images/ssg.jpg", "images/ssh.jpg", "images/ssi.jpg"]
+        images: ["images/ssg.webp", "images/ssh.webp", "images/ssi.webp"]
     },
     {
         id: "semi-27",
@@ -466,7 +466,7 @@ const sareeDatabase = [
         title: "Magenta Pink Semi Silk Saree with Elegant Zari Buttas and a Contrasting Dark Green Zari Border.",
         description: "#0051",
         price: "Price on Request",
-        images: ["images/ssj.jpg", "images/ssk.jpg", "images/ssl.jpg"]
+        images: ["images/ssj.webp", "images/ssk.webp", "images/ssl.webp"]
     },
     {
         id: "semi-28",
@@ -475,7 +475,7 @@ const sareeDatabase = [
         title: "Bright Cream Semi Silk Saree with Elegant Zari Buttas and a Contrasting Red Zari Border.",
         description: "#0052",
         price: "Price on Request",
-        images: ["images/ssm.jpg", "images/ssn.jpg", "images/sso.jpg"]
+        images: ["images/ssm.webp", "images/ssn.webp", "images/sso.webp"]
     },
     {
         id: "semi-29",
@@ -484,7 +484,7 @@ const sareeDatabase = [
         title: "Pink Semi Silk Saree with Temple Motifs and a Contrasting Navy Blue and Gold Zari Border.",
         description: "#0053",
         price: "Price on Request",
-        images: ["images/ssp.jpg", "images/ssq.jpg", "images/ssr.jpg"]
+        images: ["images/ssp.webp", "images/ssq.webp", "images/ssr.webp"]
     },
     {
         id: "semi-30",
@@ -493,7 +493,7 @@ const sareeDatabase = [
         title: "Deep Magenta Semi Silk Saree with Elegant Zari Buttas and a Broad Golden Zari Border.",
         description: "#0054",
         price: "Price on Request",
-        images: ["images/sss.jpg", "images/sst.jpg", "images/ssu.jpg"]
+        images: ["images/sss.webp", "images/sst.webp", "images/ssu.webp"]
     }
 ];
 

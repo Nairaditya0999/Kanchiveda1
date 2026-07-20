@@ -521,15 +521,11 @@ hoverStyles.innerHTML = `
         box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
         z-index: 10;
     }
-    .product-card .product-info h3 {
+    .product-card .product-info .title-truncated {
         transition: color 0.3s ease;
     }
-    .product-card:hover .product-info h3 {
-        color: #b8860b !important; 
-        white-space: normal !important;
-        overflow: visible !important;
-        text-overflow: unset !important;
-        max-height: none !important;
+    .product-card:hover .product-info .title-truncated {
+        color: #b8860b; 
     }
     
     /* Full screen Dynamic Modal Styles */
@@ -652,7 +648,9 @@ function loadProducts() {
                 </div>
             </div>
             <div class="product-info">
-                <h3>${saree.title}</h3>
+                <div class="product-title-wrapper">
+                    <h3 class="product-title">${saree.title}</h3>
+                </div>
                 <p class="description">${saree.description}</p>
                 <div class="price">${saree.price || "Price on Request"}</div>
                 <button class="enquire-btn" onclick="enquireProduct('${saree.id}')">

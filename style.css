@@ -504,14 +504,49 @@ nav a.active {
     background: var(--white);
 }
 
-.product-info h3 {
-    font-size: 1.35rem;
+/* Structural Refactoring for Smooth Title Reveal without obscuring other elements */
+.product-title-wrapper {
+    position: relative;
+    max-height: 1.85rem; /* Exactly 1 line height */
     margin-bottom: 8px;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: max-height;
+}
+
+/* Elegant gradient fade for the truncated text (avoids clunky ellipsis snap) */
+.product-title-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+    height: 1.85rem;
+    background: linear-gradient(to right, rgba(255,255,255,0), var(--white) 80%);
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.product-title {
+    font-size: 1.35rem;
     color: var(--primary-color);
     letter-spacing: 0.3px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.35;
+    margin: 0;
+    white-space: normal; /* Allow natural wrapping */
+    transition: color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card:hover .product-title-wrapper {
+    max-height: 20rem; /* Increased significantly to ensure very long titles are fully readable on all devices */
+}
+
+.product-card:hover .product-title-wrapper::after {
+    opacity: 0; /* reveal the text behind the fade */
+}
+
+.product-card:hover .product-title {
+    color: #b8860b;
 }
 
 .description {
@@ -813,7 +848,15 @@ footer {
         padding: 15px;
     }
 
-    .product-info h3 {
+    .product-title-wrapper {
+        max-height: 1.55rem;
+    }
+
+    .product-title-wrapper::after {
+        height: 1.55rem;
+    }
+
+    .product-title {
         font-size: 1.15rem;
     }
 

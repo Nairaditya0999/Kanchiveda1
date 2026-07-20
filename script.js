@@ -715,14 +715,16 @@ function getAbsoluteImageUrl(relativePath) {
     return base + relativePath.replace(/\\/g, '/');
 }
 
-async function enquireProduct(sareeId) {
+async function enquireProduct(sareeId) {// Ensure function declaration matches your async signature
     const saree = sareeDatabase.find(s => s.id === sareeId);
     if (!saree) return;
 
     const phoneNumber = '919004714311';
-    const imagePath = saree.images && saree.images[0] ? saree.images[0] : '';
     const currentSlide = sliderStates[sareeId] || 0;
-    const activeImage = saree.images[currentSlide] || imagePath;
+    const activeImage = saree.images[currentSlide] || (saree.images && saree.images[0]) || '';
+    
+    // Create an absolute URL for the image so the Kanchiveda team can click it in the chat
+    const absoluteImageUrl = activeImage ? `${window.location.origin}/${activeImage}` : '';
 
     const message = [
         '✨ *NEW PRODUCT ENQUIRY | KANCHIVEDA*',
@@ -731,13 +733,14 @@ async function enquireProduct(sareeId) {
         `*Category:* ${saree.tagName}`,
         `*Reference ID:* ${saree.description || saree.id}`,
         `*Price Status:* ${saree.price || 'Price on Request'}`,
+        absoluteImageUrl ? `*Image Link:* ${absoluteImageUrl}` : '',
         '──────────────────────────',
         '',
         'Dear Kanchiveda Team,',
         'I am interested in ordering this product. Could you please check stock status, real-time availability, and processing turnaround timelines?',
         '',
         'Thank you.'
-    ].join('\n');
+    ].filter(Boolean).join('\n'); // .filter(Boolean) cleans up empty lines if absoluteImageUrl is missing
 
     const evt = window.event;
     const btn = evt && evt.currentTarget ? evt.currentTarget : null;
@@ -746,27 +749,14 @@ async function enquireProduct(sareeId) {
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
     }
 
-    if (navigator.share && activeImage) {
-        try {
-            const response = await fetch(activeImage);
-            if (response.ok) {
-                const blob = await response.blob();
-                const ext = activeImage.split('.').pop() || 'jpg';
-                const file = new File([blob], `kanchiveda-${saree.id}.${ext}`, { type: blob.type });
-                const shareData = { text: message, files: [file] };
-                if (navigator.canShare && navigator.canShare(shareData)) {
-                    await navigator.share(shareData);
-                    if (btn) resetEnquireBtn(btn);
-                    return;
-                }
-            }
-        } catch (e) {
-            // Native fallback
-        }
-    }
+    // --- REMOVED THE NAVIGATOR.SHARE BLOCK ENTIRELY TO ELIMINATE THE GLITCH ---
 
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    // Straight to the point: Open the targeted WhatsApp chat directly
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    
     if (btn) resetEnquireBtn(btn);
+
 }
 
 function resetEnquireBtn(btn) {

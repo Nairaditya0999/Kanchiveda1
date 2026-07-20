@@ -640,9 +640,9 @@ function loadProducts() {
                 <button class="slide-arrow next-arrow" onclick="moveSlide('${saree.id}', 1); event.stopPropagation();"><i class="fas fa-chevron-right"></i></button>
                 
                 <div class="slider-track" style="transform: translateX(0%);">
-                    <img src="${img1}" alt="${saree.title} View 1" onclick="openProductModal('${saree.id}', 0)" style="cursor: zoom-in;">
-                    <img src="${img2}" alt="${saree.title} View 2" onclick="openProductModal('${saree.id}', 1)" style="cursor: zoom-in;">
-                    <img src="${img3}" alt="${saree.title} View 3" onclick="openProductModal('${saree.id}', 2)" style="cursor: zoom-in;">
+                    <img src="${img1}" alt="${saree.title} View 1" onclick="openProductModal('${saree.id}', 0)" loading="lazy" style="cursor: zoom-in;">
+                    <img src="${img2}" alt="${saree.title} View 2" onclick="openProductModal('${saree.id}', 1)" loading="lazy" style="cursor: zoom-in;">
+                    <img src="${img3}" alt="${saree.title} View 3" onclick="openProductModal('${saree.id}', 2)" loading="lazy" style="cursor: zoom-in;">
                 </div>
 
                 <div class="slider-dots">

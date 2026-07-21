@@ -183,38 +183,23 @@ nav a.active {
 }
 
 /* ==========================================================================
-   3. HERO DISPLAY ELEMENTS (REPLACED BG WITH RICH MAROON GRADIENT + GOLD PATTERN)
+   3. HERO DISPLAY ELEMENTS (EXACT MOBILE LAYOUT MATCH)
    ========================================================================== */
 .hero {
-    height: 75vh;
-    min-height: 480px;
+    height: 90vh;
+    min-height: 550px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    justify-content: flex-end;
+    align-items: flex-start;
+    text-align: left;
     color: var(--white);
-    padding: 40px 20px;
+    padding: 0 6% 60px 6%;
     border-bottom: 4px solid var(--accent-color);
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #3A0F14 0%, #58181F 50%, #72232B 100%);
-}
-
-/* Elegant traditional ornamental backdrop pattern matching maroon styling */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(var(--accent-color) 0.75px, transparent 0.75px), 
-                        radial-gradient(var(--accent-color) 0.75px, #3A0F14 0.75px);
-    background-size: 32px 32px;
-    background-position: 0 0, 16px 16px;
-    opacity: 0.08;
-    pointer-events: none;
+    background: linear-gradient(to top, rgba(20, 5, 7, 0.95) 10%, rgba(20, 5, 7, 0.4) 60%, rgba(20, 5, 7, 0.2) 100%),
+                url("images/hero-banner.webp") no-repeat center right/cover;
 }
 
 .hero-overlay {
@@ -223,7 +208,7 @@ nav a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(88, 24, 31, 0.2) 0%, rgba(30, 8, 10, 0.65) 100%);
+    background: linear-gradient(90deg, rgba(20, 5, 7, 0.9) 0%, rgba(20, 5, 7, 0.65) 50%, rgba(20, 5, 7, 0.2) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -231,49 +216,85 @@ nav a.active {
 .hero-content {
     z-index: 2;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 520px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.hero-subtitle-top {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+    position: relative;
+}
+
+.hero-subtitle-top::after {
+    content: '—   ❖   —';
+    display: block;
+    font-size: 0.65rem;
+    color: var(--accent-color);
+    letter-spacing: 4px;
+    margin-top: 6px;
+    opacity: 0.8;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 12px;
+    font-size: 3.2rem;
+    margin-bottom: 10px;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 1.5px;
     color: var(--white);
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    line-height: 1.2;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    line-height: 1.15;
+}
+
+.hero-content h1 span {
+    font-style: italic;
+    color: var(--accent-glow);
+    font-weight: 400;
+    display: block;
+    margin-top: 4px;
+}
+
+.hero-divider {
+    color: var(--accent-color);
+    font-size: 1rem;
+    letter-spacing: 6px;
+    margin: 15px 0;
+    opacity: 0.9;
 }
 
 .hero-content p {
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-    max-width: 650px;
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
     font-family: 'Georgia', serif;
-    font-style: italic;
-    color: var(--accent-glow);
-    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    color: #ECE0E1;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
 }
 
 .btn {
     background-color: var(--accent-color);
     color: #3A0F14;
-    padding: 14px 34px;
+    padding: 13px 28px;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 4px;
+    border-radius: 3px;
     transition: var(--transition);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 0.9rem;
-    display: inline-block;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     border: 1px solid var(--accent-glow);
-    margin-top: 15px;
     position: relative;
     z-index: 2;
 }
@@ -282,33 +303,33 @@ nav a.active {
     background-color: var(--white);
     color: var(--primary-color);
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
-.hero::after {
-    content: '\f107';
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
+/* Slider Dots Indicator Matching Reference */
+.hero-dots {
     position: absolute;
-    bottom: 15px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 1.3rem;
-    color: var(--accent-color);
-    animation: floatArrow 2s infinite ease-in-out;
-    z-index: 2;
+    display: flex;
+    gap: 8px;
+    z-index: 5;
 }
 
-@keyframes floatArrow {
-    0%,
-    100% {
-        transform: translate(-50%, 0);
-        opacity: 0.6;
-    }
-    50% {
-        transform: translate(-50%, -6px);
-        opacity: 1;
-    }
+.hero-dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.hero-dot.active {
+    background: var(--accent-color);
+    width: 22px;
+    border-radius: 10px;
 }
 
 /* ==========================================================================
@@ -765,7 +786,7 @@ footer {
     }
 
     .hero-content h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
     }
 
     .products-grid {
@@ -811,28 +832,39 @@ footer {
         letter-spacing: 0.5px;
     }
 
-    /* Mobile Hero Section with Clean Contrast Maroon Design */
+    /* Exact Mobile Match for Hero Banner */
     .hero {
-        height: 60vh;
-        min-height: 380px;
-        padding: 30px 15px;
+        height: 75vh;
+        min-height: 460px;
+        padding: 0 5% 50px 5%;
+        background-position: center center;
+    }
+
+    .hero-subtitle-top {
+        font-size: 0.7rem;
+        margin-bottom: 8px;
     }
 
     .hero-content h1 {
-        font-size: 2.2rem;
-        letter-spacing: 2px;
+        font-size: 2.3rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-divider {
+        margin: 8px 0;
+        font-size: 0.85rem;
     }
 
     .hero-content p {
-        font-size: 0.95rem;
-        margin-bottom: 12px;
-        padding: 0 10px;
+        font-size: 0.9rem;
+        margin-bottom: 18px;
+        line-height: 1.5;
     }
 
     .btn {
-        padding: 10px 24px;
-        font-size: 0.8rem;
-        margin-top: 10px;
+        padding: 11px 22px;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
     }
 
     .collections-section {

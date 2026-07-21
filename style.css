@@ -234,10 +234,8 @@ nav a.active {
 
 .btn {
     background-color: transparent;
-    /* Simple minimalist design */
     color: var(--white);
     padding: 10px 24px;
-    /* Reduced button size */
     text-decoration: none;
     font-weight: 500;
     border-radius: 2px;
@@ -245,15 +243,11 @@ nav a.active {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 0.85rem;
-    /* Smaller text size */
     display: inline-block;
     box-shadow: none;
-    /* Removed heavy shadow for a clean look */
     border: 1px solid rgba(255, 255, 255, 0.6);
-    /* Simple subtle border */
     margin-top: 30px;
     margin-bottom: 90px;
-    /* Kept lowered design position */
     position: relative;
     z-index: 2;
     align-self: center;
@@ -282,13 +276,11 @@ nav a.active {
 }
 
 @keyframes floatArrow {
-
     0%,
     100% {
         transform: translate(-50%, 0);
         opacity: 0.6;
     }
-
     50% {
         transform: translate(-50%, -6px);
         opacity: 1;
@@ -504,17 +496,15 @@ nav a.active {
     background: var(--white);
 }
 
-/* Structural Refactoring for Smooth Title Reveal without obscuring other elements */
 .product-title-wrapper {
     position: relative;
-    max-height: 1.85rem; /* Exactly 1 line height */
+    max-height: 1.85rem;
     margin-bottom: 8px;
     overflow: hidden;
     transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     will-change: max-height;
 }
 
-/* Elegant gradient fade for the truncated text (avoids clunky ellipsis snap) */
 .product-title-wrapper::after {
     content: '';
     position: absolute;
@@ -533,16 +523,16 @@ nav a.active {
     letter-spacing: 0.3px;
     line-height: 1.35;
     margin: 0;
-    white-space: normal; /* Allow natural wrapping */
+    white-space: normal;
     transition: color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .product-card:hover .product-title-wrapper {
-    max-height: 20rem; /* Increased significantly to ensure very long titles are fully readable on all devices */
+    max-height: 20rem;
 }
 
 .product-card:hover .product-title-wrapper::after {
-    opacity: 0; /* reveal the text behind the fade */
+    opacity: 0;
 }
 
 .product-card:hover .product-title {
@@ -645,7 +635,6 @@ nav a.active {
         transform: scale(0.92);
         opacity: 0;
     }
-
     to {
         transform: scale(1);
         opacity: 1;
@@ -653,7 +642,7 @@ nav a.active {
 }
 
 /* ==========================================================================
-   7. FOOTER ELEMENTS (CONTACT US RIGHT-ALIGNED, SMALLER TEXT, LEFT-ALIGNED ICONS)
+   7. FOOTER ELEMENTS
    ========================================================================== */
 footer {
     background: linear-gradient(135deg, #3A0F14, var(--primary-color));
@@ -762,14 +751,12 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Image optimization */
     img {
         max-width: 100%;
         height: auto;
         object-fit: cover;
     }
 
-    /* Prevent body horizontal scroll */
     html, body {
         overflow-x: hidden;
         width: 100%;
@@ -777,7 +764,7 @@ footer {
 
     header {
         padding: 8px 4%;
-        flex-wrap: wrap; /* allow wrapping naturally instead of breaking */
+        flex-wrap: wrap;
     }
 
     .logo-container {
@@ -800,11 +787,12 @@ footer {
         letter-spacing: 0.5px;
     }
 
+    /* Properly fitted background image for mobile screens */
     .hero {
         padding-bottom: 20px;
-        height: 45vh; /* Reduced height to stop horizontal cropping without using contain */
-        min-height: 320px;
-        background: linear-gradient(rgba(20, 5, 7, 0.12), rgba(20, 5, 7, 0.28)), 
+        height: 50vh;
+        min-height: 350px;
+        background: linear-gradient(rgba(20, 5, 7, 0.15), rgba(20, 5, 7, 0.35)), 
                     url("images/hero-banner.webp") no-repeat center center/cover;
     }
 
@@ -836,16 +824,17 @@ footer {
         font-size: 2.4rem;
     }
 
-    /* Switch row layouts to columns */
+    /* TWO PRODUCTS PER ROW ON MOBILE SCREENS */
     .products-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
         width: 100%;
         box-sizing: border-box;
+        padding: 0 5px;
     }
 
     .product-info {
-        padding: 15px;
+        padding: 10px;
     }
 
     .product-title-wrapper {
@@ -857,24 +846,26 @@ footer {
     }
 
     .product-title {
-        font-size: 1.15rem;
+        font-size: 0.95rem;
     }
 
     .description {
-        font-size: 0.92rem;
+        font-size: 0.8rem;
+        margin-bottom: 10px;
     }
 
     .price {
-        font-size: 1.25rem;
-        margin-bottom: 12px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        padding-top: 8px;
     }
 
     .enquire-btn {
-        padding: 12px;
-        font-size: 0.85rem;
+        padding: 8px 6px;
+        font-size: 0.75rem;
+        gap: 4px;
     }
 
-    /* Switch row layouts to columns */
     .footer-container {
         flex-direction: column;
         align-items: center;

@@ -17,8 +17,6 @@
     <!-- Header / Navbar -->
     <header>
         <div class="logo-container">
-            <!-- RECOMMENDED: Save your images to an 'images' project folder so they display properly on all devices -->
-
             <img src="images/logo.webp" alt="Kanchiveda Text" class="brand-logo-img">
         </div>
         <nav>
@@ -38,7 +36,6 @@
 
     <!-- Hero Banner Section -->
     <section id="home" class="hero">
-
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <a href="#collections" class="btn" onclick="filterCategory('all')">Explore Collections</a>
@@ -51,9 +48,9 @@
         <p class="section-subtitle">Exquisite designs crafted for your special moments</p>
 
         <div class="filter-buttons">
-            <button class="filter-btn active" id="btn-all" onclick="filterCategory('all')">All </button>
+            <button class="filter-btn active" id="btn-all" onclick="filterCategory('all')">All</button>
             <button class="filter-btn" id="btn-pure" onclick="filterCategory('pure-silk')">Pure Silk</button>
-            <button class="filter-btn" id="btn-semi" onclick="filterCategory('semi-silk')">Semi Silk </button>
+            <button class="filter-btn" id="btn-semi" onclick="filterCategory('semi-silk')">Semi Silk</button>
         </div>
 
         <div class="products-grid" id="saree-container">
@@ -64,20 +61,21 @@
     <!-- Lightbox Modal Screen -->
     <div id="image-modal" class="modal" onclick="closeModal()">
         <span class="close-modal">&times;</span>
-        <img class="modal-content" id="modal-img" onclick="event.stopPropagation()">
+        <img class="modal-content" id="modal-img" alt="Enlarged view" onclick="event.stopPropagation()">
     </div>
 
     <!-- Footer / Contact Section -->
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-about">
-
+                <h3>Kanchiveda</h3>
+                <p>Bringing traditional elegance and pure silk craft straight to your wardrobe.</p>
             </div>
             <div class="footer-contact">
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-envelope"></i> kanchivedapvtltd@gmail.com</p>
                 <p><i class="fas fa-phone"></i> 9004714311</p>
-                <p><i class="fas fa-map-marker-alt"></i> New panvel Navimumbai Maharashtra</p>
+                <p><i class="fas fa-map-marker-alt"></i> New Panvel, Navi Mumbai, Maharashtra</p>
             </div>
         </div>
         <div class="footer-bottom">

@@ -183,28 +183,56 @@ nav a.active {
 }
 
 /* ==========================================================================
-   3. HERO DISPLAY ELEMENTS (VISIBLE BG & CENTERED, SMALLER & SIMPLER EXPLORE BUTTON)
+   3. HERO DISPLAY ELEMENTS (REPLACED BG WITH RICH MAROON GRADIENT + GOLD PATTERN)
    ========================================================================== */
 .hero {
-    height: 100vh;
+    height: 75vh;
+    min-height: 480px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     text-align: center;
     color: var(--white);
-    padding: 0 20px 15px 20px;
+    padding: 40px 20px;
     border-bottom: 4px solid var(--accent-color);
     position: relative;
     overflow: hidden;
-    background: linear-gradient(rgba(20, 5, 7, 0.12), rgba(20, 5, 7, 0.28)),
-        url("images/hero-banner.webp") no-repeat center center/cover;
+    background: linear-gradient(135deg, #3A0F14 0%, #58181F 50%, #72232B 100%);
+}
+
+/* Elegant traditional ornamental backdrop pattern matching maroon styling */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(var(--accent-color) 0.75px, transparent 0.75px), 
+                        radial-gradient(var(--accent-color) 0.75px, #3A0F14 0.75px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(88, 24, 31, 0.2) 0%, rgba(30, 8, 10, 0.65) 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .hero-content {
     z-index: 2;
     width: 100%;
-    margin-bottom: 0px;
+    max-width: 800px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,53 +240,49 @@ nav a.active {
 }
 
 .hero-content h1 {
-    font-size: 3.8rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 12px;
     font-weight: 700;
     letter-spacing: 3px;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
+    color: var(--white);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     line-height: 1.2;
 }
 
 .hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    max-width: 650px;
     font-family: 'Georgia', serif;
     font-style: italic;
     color: var(--accent-glow);
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.85);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
 }
 
 .btn {
-    background-color: transparent;
-    color: var(--white);
-    padding: 10px 24px;
+    background-color: var(--accent-color);
+    color: #3A0F14;
+    padding: 14px 34px;
     text-decoration: none;
-    font-weight: 500;
-    border-radius: 2px;
+    font-weight: 700;
+    border-radius: 4px;
     transition: var(--transition);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     display: inline-block;
-    box-shadow: none;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    margin-top: 30px;
-    margin-bottom: 90px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--accent-glow);
+    margin-top: 15px;
     position: relative;
     z-index: 2;
-    align-self: center;
 }
 
 .btn:hover {
     background-color: var(--white);
     color: var(--primary-color);
-    border-color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .hero::after {
@@ -266,7 +290,7 @@ nav a.active {
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
-    bottom: 4px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 1.3rem;
@@ -787,31 +811,28 @@ footer {
         letter-spacing: 0.5px;
     }
 
-    /* Properly fitted background image for mobile screens */
+    /* Mobile Hero Section with Clean Contrast Maroon Design */
     .hero {
-        padding-bottom: 20px;
-        height: 50vh;
-        min-height: 350px;
-        background: linear-gradient(rgba(20, 5, 7, 0.15), rgba(20, 5, 7, 0.35)), 
-                    url("images/hero-banner.webp") no-repeat center center/cover;
+        height: 60vh;
+        min-height: 380px;
+        padding: 30px 15px;
     }
 
     .hero-content h1 {
         font-size: 2.2rem;
+        letter-spacing: 2px;
     }
 
     .hero-content p {
-        font-size: 1rem;
-        margin-bottom: 6px;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
         padding: 0 10px;
-        box-sizing: border-box;
     }
 
     .btn {
-        padding: 9px 20px;
-        font-size: 0.75rem;
-        margin-top: 20px;
-        margin-bottom: 60px;
+        padding: 10px 24px;
+        font-size: 0.8rem;
+        margin-top: 10px;
     }
 
     .collections-section {

@@ -713,7 +713,7 @@ function getAbsoluteImageUrl(relativePath) {
     return base + relativePath.replace(/\\/g, '/');
 }
 
-async function enquireProduct(sareeId) {// Ensure function declaration matches your async signature
+async function enquireProduct(sareeId) { // Ensure function declaration matches your async signature
     const saree = sareeDatabase.find(s => s.id === sareeId);
     if (!saree) return;
 
@@ -734,10 +734,7 @@ async function enquireProduct(sareeId) {// Ensure function declaration matches y
         absoluteImageUrl ? `*Image Link:* ${absoluteImageUrl}` : '',
         '──────────────────────────',
         '',
-        'Dear Kanchiveda Team,',
-        'I am interested in ordering this product. Could you please check stock status, real-time availability, and processing turnaround timelines?',
-        '',
-        'Thank you.'
+        "Hi! I'm interested in this saree. Is it available? Could you please let me know the price? Thank you!"
     ].filter(Boolean).join('\n'); // .filter(Boolean) cleans up empty lines if absoluteImageUrl is missing
 
     const evt = window.event;
@@ -747,14 +744,11 @@ async function enquireProduct(sareeId) {// Ensure function declaration matches y
         btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
     }
 
-    // --- REMOVED THE NAVIGATOR.SHARE BLOCK ENTIRELY TO ELIMINATE THE GLITCH ---
-
     // Straight to the point: Open the targeted WhatsApp chat directly
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     
     if (btn) resetEnquireBtn(btn);
-
 }
 
 function resetEnquireBtn(btn) {

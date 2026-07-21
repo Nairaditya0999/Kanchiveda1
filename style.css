@@ -183,9 +183,7 @@ nav a.active {
 }
 
 /* ==========================================================================
-   3. HERO DISPLAY ELEMENTS (HIGH-VISIBILITY BACKGROUND & MOBILE BUTTON)
- /* ==========================================================================
-   3. HERO DISPLAY ELEMENTS (FIXED HIGH-VISIBILITY BACKGROUND)
+   3. HERO DISPLAY ELEMENTS (FIXED BRIGHT DESKTOP BANNER)
    ========================================================================== */
 .hero {
     height: 90vh;
@@ -193,16 +191,16 @@ nav a.active {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
     color: var(--white);
     padding: 0 6% 60px 6%;
     border-bottom: 4px solid var(--accent-color);
     position: relative;
     overflow: hidden;
     
-    /* FIX 1: Lightened the linear-gradient so the banner details are clearly visible */
-    background: linear-gradient(to top, rgba(20, 5, 7, 0.6) 0%, rgba(20, 5, 7, 0.1) 50%, rgba(20, 5, 7, 0.2) 100%),
+    /* Lightened background overlay so the banner image is vibrant and clear */
+    background: linear-gradient(to top, rgba(20, 5, 7, 0.5) 0%, rgba(20, 5, 7, 0.1) 60%, rgba(20, 5, 7, 0.2) 100%),
                 url("images/hero-banner.webp") no-repeat center center / cover;
 }
 
@@ -212,8 +210,7 @@ nav a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    /* FIX 2: Reduced opacity from 0.9 to 0.2 so center text/temple art isn't blacked out */
-    background: linear-gradient(90deg, rgba(20, 5, 7, 0.3) 0%, rgba(20, 5, 7, 0.1) 50%, transparent 100%);
+    background: linear-gradient(180deg, rgba(20, 5, 7, 0.1) 0%, rgba(20, 5, 7, 0.2) 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -225,8 +222,8 @@ nav a.active {
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
 }
 
 .hero-subtitle-top {
@@ -284,7 +281,7 @@ nav a.active {
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
 }
 
-/* Updated Mobile-Friendly Gold Button */
+/* Gold CTA Button */
 .btn {
     background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #B8860B 100%);
     color: #3A0F14;
@@ -329,32 +326,6 @@ nav a.active {
     color: var(--primary-color);
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-/* Slider Dots Indicator Matching Reference */
-.hero-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 5;
-}
-
-.hero-dot {
-    width: 8px;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.hero-dot.active {
-    background: var(--accent-color);
-    width: 22px;
-    border-radius: 10px;
 }
 
 /* ==========================================================================
@@ -431,7 +402,7 @@ nav a.active {
 }
 
 /* ==========================================================================
-   5. PRODUCT CARD ARCHITECTURE & LARGER FONTS
+   5. PRODUCT CARD ARCHITECTURE
    ========================================================================== */
 .product-card {
     background-color: var(--white);
@@ -514,31 +485,6 @@ nav a.active {
 
 .next-arrow {
     right: 10px;
-}
-
-.slider-dots {
-    position: absolute;
-    bottom: 14px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 6px;
-    z-index: 5;
-}
-
-.dot {
-    width: 6px;
-    height: 6px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.dot.active {
-    background: var(--accent-color);
-    width: 16px;
-    border-radius: 10px;
 }
 
 .tag {
@@ -788,7 +734,7 @@ footer {
 }
 
 /* ==========================================================================
-   8. MEDIA QUERIES & RESPONSIVE BREAKPOINTS (MOBILE OPTIMIZED HERO & CTA)
+   8. MEDIA QUERIES & RESPONSIVE BREAKPOINTS (FIXED MOBILE UI)
    ========================================================================== */
 @media (max-width: 1200px) {
     .products-grid {
@@ -805,7 +751,6 @@ footer {
         height: 40px;
     }
 
-    .brand-logo-symbol,
     .brand-logo-img {
         height: 34px;
     }
@@ -832,102 +777,77 @@ footer {
         width: 100%;
     }
 
+    /* Fixed Clean Header Layout on Mobile */
     header {
-        padding: 8px 4%;
-        flex-wrap: wrap;
+        padding: 10px 4%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .logo-container {
-        height: 36px;
+        height: 32px;
     }
 
-    .brand-logo-symbol,
     .brand-logo-img {
-        height: 30px;
+        height: 28px;
     }
 
     nav ul {
         gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
     }
 
     nav a {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         letter-spacing: 0.5px;
     }
 
-    /* Mobile Match for Hero Banner */
+    /* Fixed Bright & Visible Mobile Hero Banner */
     .hero {
-        height: 80vh;
-        min-height: 480px;
-        padding: 0 5% 45px 5%;
-        background-position: center bottom;
+        height: 65vh;
+        min-height: 420px;
+        padding: 0 5% 35px 5%;
         align-items: center;
         text-align: center;
-        background-image: linear-gradient(180deg, rgba(20, 5, 7, 0.3) 0%, rgba(20, 5, 7, 0.85) 65%, rgba(20, 5, 7, 0.98) 100%),
-                          url("images/hero-banner.webp");
+        /* Light opacity overlay so image details are clear and visible */
+        background: linear-gradient(180deg, rgba(20, 5, 7, 0.15) 0%, rgba(20, 5, 7, 0.2) 60%, rgba(20, 5, 7, 0.6) 100%),
+                    url("images/hero-banner.webp") no-repeat center center / cover;
     }
 
     .hero-overlay {
-        background: radial-gradient(circle at center, rgba(20, 5, 7, 0.4) 0%, rgba(20, 5, 7, 0.8) 100%);
+        display: none; /* Prevents stacking dark overlays on mobile */
     }
 
     .hero-content {
         align-items: center;
         text-align: center;
         max-width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
 
-    .hero-subtitle-top {
-        font-size: 0.72rem;
-        margin-bottom: 8px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem;
-        letter-spacing: 1px;
-    }
-
-    .hero-divider {
-        margin: 8px 0;
-        font-size: 0.85rem;
-    }
-
-    .hero-content p {
-        font-size: 0.92rem;
-        margin-bottom: 22px;
-        line-height: 1.5;
-    }
-
-    /* Fully Mobile-Friendly Button Display */
+    /* Clean Mobile Button */
     .btn {
-        width: 100%;
-        max-width: 260px;
-        padding: 14px 24px;
+        width: auto;
+        min-width: 200px;
+        padding: 12px 24px;
         font-size: 0.8rem;
-        letter-spacing: 1.2px;
+        letter-spacing: 1px;
         border-radius: 25px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
     }
 
     .collections-section {
-        padding: 60px 4%;
-        box-sizing: border-box;
-        max-width: 100%;
+        padding: 40px 4%;
     }
 
     .collections-section h2 {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
     }
 
-    /* TWO PRODUCTS PER ROW ON MOBILE SCREENS */
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
-        width: 100%;
-        box-sizing: border-box;
         padding: 0 5px;
     }
 
@@ -935,41 +855,23 @@ footer {
         padding: 10px;
     }
 
-    .product-title-wrapper {
-        max-height: 1.55rem;
-    }
-
-    .product-title-wrapper::after {
-        height: 1.55rem;
-    }
-
     .product-title {
         font-size: 0.95rem;
     }
 
-    .description {
-        font-size: 0.8rem;
-        margin-bottom: 10px;
-    }
-
     .price {
         font-size: 1rem;
-        margin-bottom: 10px;
-        padding-top: 8px;
     }
 
     .enquire-btn {
         padding: 8px 6px;
         font-size: 0.75rem;
-        gap: 4px;
     }
 
     .footer-container {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
-        width: 100%;
-        box-sizing: border-box;
+        gap: 20px;
     }
 
     .footer-about,
@@ -978,23 +880,7 @@ footer {
         text-align: center;
     }
 
-    .footer-about h3,
-    .footer-contact h3 {
-        font-size: 1.5rem;
-    }
-
-    .footer-about p,
-    .footer-contact p {
-        font-size: 0.95rem;
-    }
-
     .footer-contact p {
         justify-content: center;
-    }
-
-    .close-modal {
-        top: 20px;
-        right: 20px;
-        font-size: 40px;
     }
 }

@@ -183,7 +183,9 @@ nav a.active {
 }
 
 /* ==========================================================================
-   3. HERO DISPLAY ELEMENTS (EXACT MOBILE LAYOUT MATCH)
+   3. HERO DISPLAY ELEMENTS (HIGH-VISIBILITY BACKGROUND & MOBILE BUTTON)
+ /* ==========================================================================
+   3. HERO DISPLAY ELEMENTS (FIXED HIGH-VISIBILITY BACKGROUND)
    ========================================================================== */
 .hero {
     height: 90vh;
@@ -198,8 +200,10 @@ nav a.active {
     border-bottom: 4px solid var(--accent-color);
     position: relative;
     overflow: hidden;
-    background: linear-gradient(to top, rgba(20, 5, 7, 0.95) 10%, rgba(20, 5, 7, 0.4) 60%, rgba(20, 5, 7, 0.2) 100%),
-                url("images/hero-banner.webp") no-repeat center right/cover;
+    
+    /* FIX 1: Lightened the linear-gradient so the banner details are clearly visible */
+    background: linear-gradient(to top, rgba(20, 5, 7, 0.6) 0%, rgba(20, 5, 7, 0.1) 50%, rgba(20, 5, 7, 0.2) 100%),
+                url("images/hero-banner.webp") no-repeat center center / cover;
 }
 
 .hero-overlay {
@@ -208,7 +212,8 @@ nav a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, rgba(20, 5, 7, 0.9) 0%, rgba(20, 5, 7, 0.65) 50%, rgba(20, 5, 7, 0.2) 100%);
+    /* FIX 2: Reduced opacity from 0.9 to 0.2 so center text/temple art isn't blacked out */
+    background: linear-gradient(90deg, rgba(20, 5, 7, 0.3) 0%, rgba(20, 5, 7, 0.1) 50%, transparent 100%);
     pointer-events: none;
     z-index: 1;
 }
@@ -279,30 +284,50 @@ nav a.active {
     text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
 }
 
+/* Updated Mobile-Friendly Gold Button */
 .btn {
-    background-color: var(--accent-color);
+    background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #B8860B 100%);
     color: #3A0F14;
-    padding: 13px 28px;
+    padding: 14px 32px;
     text-decoration: none;
     font-weight: 700;
-    border-radius: 3px;
+    border-radius: 30px;
     transition: var(--transition);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-size: 0.82rem;
+    font-size: 0.85rem;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     border: 1px solid var(--accent-glow);
     position: relative;
     z-index: 2;
+    overflow: hidden;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.btn:hover {
-    background-color: var(--white);
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover, .btn:active {
+    background: var(--white);
     color: var(--primary-color);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
 
@@ -763,7 +788,7 @@ footer {
 }
 
 /* ==========================================================================
-   8. MEDIA QUERIES & RESPONSIVE BREAKPOINTS
+   8. MEDIA QUERIES & RESPONSIVE BREAKPOINTS (MOBILE OPTIMIZED HERO & CTA)
    ========================================================================== */
 @media (max-width: 1200px) {
     .products-grid {
@@ -832,21 +857,36 @@ footer {
         letter-spacing: 0.5px;
     }
 
-    /* Exact Mobile Match for Hero Banner */
+    /* Mobile Match for Hero Banner */
     .hero {
-        height: 75vh;
-        min-height: 460px;
-        padding: 0 5% 50px 5%;
-        background-position: center center;
+        height: 80vh;
+        min-height: 480px;
+        padding: 0 5% 45px 5%;
+        background-position: center bottom;
+        align-items: center;
+        text-align: center;
+        background-image: linear-gradient(180deg, rgba(20, 5, 7, 0.3) 0%, rgba(20, 5, 7, 0.85) 65%, rgba(20, 5, 7, 0.98) 100%),
+                          url("images/hero-banner.webp");
+    }
+
+    .hero-overlay {
+        background: radial-gradient(circle at center, rgba(20, 5, 7, 0.4) 0%, rgba(20, 5, 7, 0.8) 100%);
+    }
+
+    .hero-content {
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+        margin-bottom: 10px;
     }
 
     .hero-subtitle-top {
-        font-size: 0.7rem;
+        font-size: 0.72rem;
         margin-bottom: 8px;
     }
 
     .hero-content h1 {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
         letter-spacing: 1px;
     }
 
@@ -856,15 +896,20 @@ footer {
     }
 
     .hero-content p {
-        font-size: 0.9rem;
-        margin-bottom: 18px;
+        font-size: 0.92rem;
+        margin-bottom: 22px;
         line-height: 1.5;
     }
 
+    /* Fully Mobile-Friendly Button Display */
     .btn {
-        padding: 11px 22px;
-        font-size: 0.75rem;
-        letter-spacing: 1px;
+        width: 100%;
+        max-width: 260px;
+        padding: 14px 24px;
+        font-size: 0.8rem;
+        letter-spacing: 1.2px;
+        border-radius: 25px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
     .collections-section {
